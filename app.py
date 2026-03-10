@@ -5,7 +5,47 @@ pokedex = open("./pokedex.json", encoding="utf8")
 data = json.load(pokedex)
 print(data[0])
 
-# Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
+
+
+
+for a in data:
+    print(a["name"])
+
+cart = []
+
+search = input("Search up a pokemon: ")
+while True:
+    for a in data:
+        if purchase == a["name"]:
+            found = True
+            purchase = input("What other pokemon would you like to search up?: ")
+            cart.append({
+                    "name": a["name"],
+                     })
+            break
+    if found == False:
+        print ("Pokemon not found")
+        purchase = input("What other pokemon would you like to search up: ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
 
 # Add a language choice feature and print the pokemons name based on the user input
 
