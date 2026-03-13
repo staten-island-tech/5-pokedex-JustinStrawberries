@@ -3,29 +3,42 @@ import json
 pokedex = open("./pokedex.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 data = json.load(pokedex)
-print(data[0])
-
-
-
+# print(data[0])
 
 for a in data:
-    print(a["name"])
+    print (a["name"])
 
-cart = []
-
-search = input("Search up a pokemon: ")
-while True:
+language = input("Choose your Language: ")
+Found = True
+while Found == True:
     for a in data:
-        if purchase == a["name"]:
-            found = True
-            purchase = input("What other pokemon would you like to search up?: ")
-            cart.append({
-                    "name": a["name"],
-                     })
-            break
-    if found == False:
-        print ("Pokemon not found")
-        purchase = input("What other pokemon would you like to search up: ")
+        if language in a["name"]:
+            print(a["name"][language])
+            Found = False
+        else:
+            print ("That is not viable language")
+            language = input("try again: ")
+            
+        
+
+# cart = []
+
+
+
+
+# search = input("Search up a pokemon: ")
+# while True:
+#     for a in data:
+#         if purchase == a["name"]:
+#             found = True
+#             purchase = input("What other pokemon would you like to search up?: ")
+#             cart.append({
+#                     "name": a["name"],
+#                      })
+#             break
+#     if found == False:
+#         print ("Pokemon not found")
+#         purchase = input("What other pokemon would you like to search up: ")
 
 
 
