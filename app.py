@@ -9,15 +9,26 @@ for a in data:
     print (a["name"])
 
 language = input("Choose your Language: ")
-Found = True
-while Found == True:
+choose = True
+while choose == True:
     for a in data:
         if language in a["name"]:
             print(a["name"][language])
-            Found = False
+            choose = False
         else:
             print ("That is not viable language")
             language = input("try again: ")
+            
+type = input("Choose your Type: ")
+choose = True
+while choose == True:
+    for a in data:
+        if type in a["type"]:
+            print(a["type"][type])
+            choose = False
+        else:
+            print ("That is not viable type")
+            type = input("try again: ")
             
         
 
@@ -29,16 +40,16 @@ while Found == True:
 # search = input("Search up a pokemon: ")
 # while True:
 #     for a in data:
-#         if purchase == a["name"]:
+#         if search == a["name"]:
 #             found = True
-#             purchase = input("What other pokemon would you like to search up?: ")
+#             search = input("What other pokemon would you like to search up?: ")
 #             cart.append({
 #                     "name": a["name"],
 #                      })
 #             break
 #     if found == False:
 #         print ("Pokemon not found")
-#         purchase = input("What other pokemon would you like to search up: ")
+#         search = input("What other pokemon would you like to search up: ")
 
 
 
