@@ -5,27 +5,31 @@ pokedex = open("./pokedex.json", encoding="utf8")
 data = json.load(pokedex)
 # print(data[0])
 
-for a in data:
-    print (a["name"])
+for i, a in enumerate(data, start=0):
+    print(i, a["name"])
 
 language = input("Choose your Language: ")
 choose = True
 while choose == True:
-    for a in data:
+    for i, a in enumerate(data, start=0):
         if language in a["name"]:
-            print(a["name"][language])
+            print([language])
             choose = False
         else:
             print ("That is not viable language")
             language = input("try again: ")
             
+
+for i, a in enumerate(data, start=0):
+    print(i,a["name"][language],a["type"])
+
 type = input("Choose your Type: ")
-choose = True
-while choose == True:
-    for a in data:
+wow = True
+while wow == True:
+    for i, a in enumerate(data, start=0):
         if type in a["type"]:
-            print(a["type"][type])
-            choose = False
+            print(i, a[type])
+            wow = False
         else:
             print ("That is not viable type")
             type = input("try again: ")
