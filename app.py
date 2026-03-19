@@ -11,8 +11,8 @@ for i, a in enumerate(data, start=0):
 language = input("Choose your Language: ")
 choose = True
 while choose == True:
-    for i, a in enumerate(data, start=0):
-        if language in a["name"]:
+    for i in range(809):
+        if language in data[i]["name"]:
             print([language])
             choose = False
         else:
@@ -23,17 +23,14 @@ while choose == True:
 for i, a in enumerate(data, start=0):
     print(i,a["name"][language],a["type"])
 
+list = []
 type = input("Choose your Type: ")
-wow = True
-while wow == True:
-    for i, a in enumerate(data, start=0):
-        if type in a["type"]:
-            print(i, a[type])
-            wow = False
-        else:
-            print ("That is not viable type")
-            type = input("try again: ")
-            
+for i in range(809):
+    if type in data[i]["type"]:
+        list.append(data[i]["name"][language], data[i]["type"])
+if list == []:
+    print("Invalid")
+print(list)
         
 
 # cart = []
